@@ -4,8 +4,11 @@
 ============
 2021/03/22
 #include <stdio.h>
+
 #include <GL/glut.h>
+
 float vx[2000],vy[2000];
+
 int N=0;
 
 void display()
