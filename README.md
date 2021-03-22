@@ -2,7 +2,7 @@
 
 2021/03/22
 ============
-2021/03/22
+
 #include <stdio.h>
 
 #include <GL/glut.h>
@@ -14,13 +14,18 @@ int N=0;
 void display()
 {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    
     glBegin(GL_LINE_LOOP);
+    
     for(int i=0;i<N;i++)
     {
         glVertex2f(vx[i],vy[i]);
     }
+    
     glEnd();
+    
     glutSwapBuffers();
+    
 }
 void mouse(int buttin , int state, int x, int y)
 {
@@ -29,9 +34,13 @@ void mouse(int buttin , int state, int x, int y)
 void motion(int x,int y)
 {
     printf("%d %d\n",x,y);
+    
     vx[N] = (x-150)/150.0;
+    
     vy[N] = -(y-150)/150.0;
+    
     N++;
+    
     display();
 }
 int main(int argc, char *argv[])
